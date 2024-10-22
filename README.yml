@@ -72,7 +72,7 @@ valores deben ser inicializados mediante el método init:
 
 Además, la clase debe poseer los siguientes métodos:
 
-● avanzar(tiempo): Recibe como argumento un int que corresponde al tiempo
+1 ● avanzar(tiempo): Recibe como argumento un int que corresponde al tiempo
 expresado en segundos. Incrementa el atributo kilometraje de acuerdo con
 el resultado de la función avanzar definida previamente.
 Este método no retorna nada. Recuerda que la velocidad almacenada en el
@@ -81,26 +81,34 @@ necesita la velocidad en m/s, por lo que deberás primero convertirla antes de
 entregar la velocidad a la función avanzar. Para convertir un valor de km/h a
 m/s, debes dividirlo por 3.6.
 𝑣𝑒𝑙𝑜𝑐𝑖𝑑𝑎𝑑 𝑒𝑛 𝑚/𝑠 = ( 𝑣𝑒𝑙𝑜𝑐𝑖𝑑𝑎𝑑 𝑒𝑛 𝑘𝑚/ℎ ) / 3.6
-● acelerar(tiempo): Recibe como argumento un int que corresponde al tiempo
+
+2 ● acelerar(tiempo): Recibe como argumento un int que corresponde al tiempo
 expresado en segundos. Primero debes transformar el tiempo de segundos
 a horas, luego sumar tiempo en horas * 0.5 al atributo aceleración.
+
 𝑡𝑖𝑒𝑚𝑝𝑜 𝑒𝑛 ℎ𝑜𝑟𝑎𝑠 = 𝑡𝑖𝑒𝑚𝑝𝑜 𝑒𝑛 𝑠𝑒𝑔𝑢𝑛𝑑𝑜𝑠 / 3600
 𝑎𝑐𝑒𝑙𝑒𝑟𝑎𝑐𝑖𝑜𝑛 += 𝑡𝑖𝑒𝑚𝑝𝑜 𝑒𝑛 ℎ𝑜𝑟𝑎𝑠 ∗ 0.5
+
 Luego, incrementa la velocidad del vehículo según el nuevo atributo
 aceleración de acuerdo con la fórmula.
+
 𝑣𝑒𝑙𝑜𝑐𝑖𝑑𝑎𝑑 += 𝑎𝑐𝑒𝑙𝑒𝑟𝑎𝑐𝑖𝑜𝑛 ∗ 𝑡𝑖𝑒𝑚𝑝𝑜 𝑒𝑛 ℎ𝑜𝑟𝑎𝑠
+
 Luego, llama al método avanzar(tiempo), entregando como atributo el
 tiempo en segundos recibido inicialmente y ejecuta el método gastar() de
 cada uno de los objetos guardados en la lista de ruedas entregando como
 argumento el string “acelerar” y el tipo “automovil". Finalmente, devuelve el
 atributo aceleración a 0. Este método no retorna nada.
 𝑎𝑐𝑒𝑙𝑒𝑟𝑎𝑐𝑖𝑜𝑛 = 0
-● frenar(tiempo): Recibe como argumento un int que corresponde al tiempo
+
+3 ● frenar(tiempo): Recibe como argumento un int que corresponde al tiempo
 expresado en segundos. Primero debes transformar el tiempo de segundos
 a horas, y restar tiempo en horas * 0.5 al atributo aceleración.
 Luego, disminuye la velocidad del vehículo de acuerdo con el nuevo atributo
 aceleración, con la fórmula:
+
 𝑣𝑒𝑙𝑜𝑐𝑖𝑑𝑎𝑑 += 𝑎𝑐𝑒𝑙𝑒𝑟𝑎𝑐𝑖𝑜𝑛 ∗ 𝑡𝑖𝑒𝑚𝑝𝑜 𝑒𝑛 ℎ𝑜𝑟𝑎𝑠
+
 Dado que la aceleración tendrá un valor negativo en ese momento, realizar
 esta suma disminuirá la velocidad.
 Si la velocidad queda negativa, se tiene que dejar en 0.
@@ -110,21 +118,24 @@ gastar() de cada uno de los objetos guardados en la lista de ruedas
 entregándole como argumento el string “frenar” y el string “automovil".
 Finalmente devuelve el atributo aceleración a 0. Este método no retorna
 nada.
-● obtener_kilometraje(): Este método no recibe argumentos y sólo retorna el
+4 ● obtener_kilometraje(): Este método no recibe argumentos y sólo retorna el
 valor del atributo kilometraje.
-● reemplazar_rueda(): Este método no recibe argumentos. Debe buscar dentro
+5 ● reemplazar_rueda(): Este método no recibe argumentos. Debe buscar dentro
 de la lista ruedas la rueda con menor resistencia y eliminarla de la lista.
 Luego debe instanciar un nuevo objeto de la clase Rueda y añadir este a la
 lista de ruedas. No retorna nada. En caso de que haya dos o más ruedas con
 el valor mínimo queda a su criterio cuál reemplazar.
+
 2. Clase Moto.
 Esta clase posee los mismos atributos que la clase automóvil, y además un atributo
 adicional a los que ya tiene de la clase Automovil:
+
 ● cilindrada: Se recibe como parámetro al inicializar la clase, es número int no
 negativo (puede ser 0).
 Además, su inicializador inicializa el atributo ruedas como una lista de 2 objetos de
 clase Rueda en vez de 4.
 Además, debe contener los siguientes métodos:
+
 ● avanzar(tiempo): Recibe como argumento un int que corresponde al tiempo
 expresado en segundos. Incrementa el atributo kilometraje de acuerdo con
 el resultado de la función avanzar definida previamente.
@@ -136,10 +147,14 @@ Para convertir un valor de km/h a m/s, debes dividirlo por 3.6.
 ● acelerar(tiempo): Recibe como argumento un int que corresponde al tiempo
 expresado en segundos. Primero debes transformar el tiempo de segundos
 a horas, luego debes aumentar la aceleración de acuerdo con la fórmula:
+
 𝑎𝑐𝑒𝑙𝑒𝑟𝑎𝑐𝑖𝑜𝑛 += (𝑡𝑖𝑒𝑚𝑝𝑜 𝑒𝑛 ℎ𝑜𝑟𝑎𝑠 ∗ 0.8) + (𝑐𝑖𝑙𝑖𝑛𝑑𝑟𝑎𝑑𝑎 ∗ 0.2)
+
 Luego incrementa la velocidad del vehículo según el nuevo atributo
 aceleración de acuerdo con la fórmula:
+
 𝑣𝑒𝑙𝑜𝑐𝑖𝑑𝑎𝑑 += 𝑎𝑐𝑒𝑙𝑒𝑟𝑎𝑐𝑖𝑜𝑛 ∗ 𝑡𝑖𝑒𝑚𝑝𝑜 𝑒𝑛 ℎ𝑜𝑟𝑎𝑠 ∗ 3
+
 Después llama al método avanzar(tiempo), entregándole como atributo el
 tiempo en segundos recibido anteriormente y luego, ejecuta el método
 gastar() de cada uno de los objetos guardados en la lista ruedas entregándole
@@ -147,10 +162,16 @@ como argumento el string “acelerar” y el tipo “moto". Finalmente, devuelve
 atributo aceleración a 0. Este método no retorna nada.
 ● frenar(tiempo): Recibe como argumento un int que corresponde al tiempo
 expresado en segundos. Primero debes transformar el tiempo de segundos
-a horas, y restar tiempo en horas *0.8 + cilindrada * 0.2 al atributo
+a horas, y restar 
+
+tiempo en horas *0.8 + cilindrada * 0.2 
+
+al atributo
 aceleración. Luego, disminuye la velocidad del vehículo de acuerdo con el
 nuevo atributo aceleración, con la fórmula:
+
 𝑣𝑒𝑙𝑜𝑐𝑖𝑑𝑎𝑑 += 𝑎𝑐𝑒𝑙𝑒𝑟𝑎𝑐𝑖𝑜𝑛 ∗ 𝑡𝑖𝑒𝑚𝑝𝑜 𝑒𝑛 ℎ𝑜𝑟𝑎𝑠 ∗ 2
+
 Si la velocidad queda negativa, se tiene que dejar en 0. Después llama al
 método avanzar(tiempo) entregándole como atributo el tiempo en segundos
 recibido inicialmente y luego, ejecuta el método gastar() de cada uno de los
@@ -165,7 +186,9 @@ menor a la mitad de su resistencia total y eliminarlas de la lista.
 𝑟𝑒𝑠𝑖𝑠𝑡𝑒𝑛𝑐𝑖𝑎 𝑎𝑐𝑡𝑢𝑎𝑙 < 𝑟𝑒𝑠𝑖𝑠𝑡𝑒𝑛𝑐𝑖𝑎 𝑡𝑜𝑡𝑎𝑙 ∗ 0.5
 Luego, por cada rueda eliminada debe instanciar un nuevo objeto de la clase
 Rueda y añadir este a la lista ruedas. No retorna nada.
+
 Parte 2: Completar acciones.
+
 En esta parte, debes completar la función accion(vehiculo, opcion) que se encuentra
 en el archivo main.py. Esta función recibe como argumentos una instancia de un
 vehículo y un int que corresponde a la acción a realizar. Debes completar cada

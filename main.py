@@ -1,7 +1,5 @@
 import parametros as p
 import random
-
-
 # NO MODIFICAR
 class Rueda:
     def __init__(self):
@@ -30,7 +28,6 @@ class Rueda:
         elif self.resistencia_actual < self.resistencia_total:
             self.estado = "Usada"
 
-
 # NO MODIFICAR
 def seleccionar(vehiculos):
     if not len(vehiculos):
@@ -50,32 +47,96 @@ def seleccionar(vehiculos):
     print("Se seleccionó el vehículo", str(vehiculo))
     return vehiculo
 
-
 # Parte 1: Definición de clases
-
 def avanzar(velocidad, tiempo):
-    # Completar
-    pass
-
+    kilometraje = (velocidad * tiempo) / 1000
+    return kilometraje
 
 class Automovil:
-    # Completar
-    pass
+    def __init__(self):
+        self.kilometraje = 0
+        self.ano = 0
+        self.ruedas = [
+            Rueda(),
+            Rueda(),
+            Rueda(),
+            Rueda(),
+        ]
+        self.aceleracion = 0
+        self.velocidad = 0
+    
+    def avanzar(self, tiempo):
+        self.kilometraje = self.kilometraje / 3.6
+    
+    def acelerar(self, tiempo):
+        tiempo /= 3600
+        self.aceleracion += tiempo * 0.5
+        self.velocidad += self.aceleracion * tiempo
+        avanzar(tiempo)
+        Rueda.gastar()
+        self.aceleracion = 0
 
+    def frenar(self, tiempo):
+        tiempo /= 3600
+        self.aceleracion -= tiempo * 0.5
+        self.velocidad += self.aceleracion * tiempo
+        avanzar(tiempo)
+        Rueda.gastar()
+        self.aceleracion = 0
+
+    def obtener_kilometraje(self):
+        return self.kilometraje
+
+    def reemplazar_rueda(self):
+        for indice in self.ruedas:
+            self.ruedas.append(Rueda())
+            pass
     def __str__(self):
         return f"Automóvil del año {self.ano}."
 
-
 class Moto:
-    # Completar
-    pass
+    def __init__(self):
+        self.kilometraje = 0
+        self.ano = 0
+        self.ruedas = [
+            Rueda(),
+            Rueda(),
+        ]
+        self.aceleracion = 0
+        self.velocidad = 0
+        self.cilindrada = 0
 
+    def avanzar(self, tiempo):
+        self.kilometraje = self.kilometraje / 3.6
+    
+    def acelerar(self, tiempo):
+        tiempo /= 3600
+        self.aceleracion += tiempo * 0.8 + self.cilindrada * 0.2
+        self.velocidad += self.aceleracion * tiempo * 3
+        avanzar(tiempo)
+        Rueda.gastar()
+        self.aceleracion = 0
+
+    def frenar(self, tiempo):
+        tiempo /= 3600
+        self.aceleracion -= tiempo * 0.8 + self.cilindrada * 0.2
+        self.velocidad += self.aceleracion * tiempo * 2
+        avanzar(tiempo)
+        Rueda.gastar()
+        self.aceleracion = 0
+
+    def obtener_kilometraje(self):
+        return self.kilometraje
+
+    def reemplazar_rueda(self):
+        for indice in self.ruedas:
+            if(True):
+                Rueda.pop()
+                self.ruedas.append(Rueda())
     def __str__(self):
         return f"Moto del año {self.ano}."
 
-
 # Parte 2: Completar acciones
-
 def accion(vehiculo, opcion):
     # Completar
     if opcion == 2:  # Acelerar
@@ -83,16 +144,25 @@ def accion(vehiculo, opcion):
     elif opcion == 3:  # Frenar
         pass
     elif opcion == 4:  # Avanzar
-        pass
+        texto = "Escoja un tiempo en segundos para avanzar el vehículo: "
+        try:
+            opcion = int(input(texto))
+            print()
+            avanzar(opcion, opcion)
+
+        except ValueError:
+            print("Ingrese opción válida.")
     elif opcion == 5:  # Cambiar rueda
         pass
     elif opcion == 6:  # Mostrar Estado
         pass
 
-
 def main():
-    vehiculos = []
-
+    vehiculos = [
+        "automovil",
+        "moto"
+    ]
+    
     # Parte 3: Completar código principal
     # Completar
     # Aquí debes instanciar los dos objetos pedidos
