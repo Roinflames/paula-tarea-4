@@ -1,3 +1,1 @@
-{
-    "resistencia": [60,100]
-}
+RESISTENCIA = [60, 100]

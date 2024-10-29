@@ -56,12 +56,7 @@ class Automovil:
     def __init__(self):
         self.kilometraje = 0
         self.ano = 0
-        self.ruedas = [
-            Rueda(),
-            Rueda(),
-            Rueda(),
-            Rueda(),
-        ]
+        self.ruedas = [Rueda(),Rueda(),Rueda(),Rueda(),]
         self.aceleracion = 0
         self.velocidad = 0
     
